@@ -68,7 +68,7 @@ let billSettings = JSON.parse(localStorage.getItem('billSettings')) || {
     customerCare: '',
     footer: 'Thank you for dining with us!'
 };
-let adminPassword = localStorage.getItem('adminPassword') || 'admi';
+let adminPassword = localStorage.getItem('adminPassword') || 'admin';
 let currentTheme = localStorage.getItem('theme') || 'dark'; // Theme State
 let settingsUnlocked = false; // Flag to track unlock status
 let recoveryConfig = JSON.parse(localStorage.getItem('recoveryConfig')) || {
@@ -1125,9 +1125,9 @@ function handleForgotPassword() {
     if (answer === null) return;
 
     if (answer.trim().toLowerCase() === recoveryConfig.answer.toLowerCase()) {
-        adminPassword = 'admi';
+        adminPassword = 'admin';
         localStorage.setItem('adminPassword', adminPassword);
-        alert('Password has been reset to default: "admi"');
+        alert('Password has been reset to default: "admin"');
     } else {
         alert('Incorrect Answer.');
     }
